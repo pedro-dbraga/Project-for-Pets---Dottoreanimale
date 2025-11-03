@@ -1,0 +1,141 @@
+.navegation {
+    display:flex;
+    justify-content: center;
+    gap: 88px;
+    font-size: 32px;
+}
+
+.pets {
+    display: flex;
+    justify-content: center;
+    gap: 64px;
+    margin: 80px auto 0 auto;
+    max-width: 1024px;
+}
+
+.perfilpet {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/*PETS GERAL*/
+.box {
+    margin: 32px auto;
+    padding: 0px 80px;
+    max-width: 1024px;
+}
+.cabeçalhopet{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cp-g-e{
+    display:flex;
+    gap: 8px;
+}
+.quadropet{
+    padding: 32px 32px;
+    background-color: #7EB060;
+    border-radius: 8px;
+}
+.cp-indv{
+    display:flex;
+    align-items: center;
+}
+.cp-indv p{
+    margin-left: 32px;
+    font-size: 40px;
+}
+
+.menugeral{
+    display: flex;
+    justify-content: start;
+    width: 100%;
+}
+.menugeral ul, li{
+    list-style: none;
+}
+.menugeral ul li{
+    width: 100%;
+    padding: 0 0 0 8px;
+}
+
+.menugeral ul li.ativo {
+  background: #ffffff; 
+  border-radius: 8px 0 0 8px;
+}
+.menugeral ul{
+    margin:0;
+    padding:0;
+}
+.imgperfil{
+    width: 75px;
+    height: 75px;
+}
+.iconedit{
+    width: 24px;
+    height: 24px;
+    margin-left: 8px;
+    margin-top: 4px;
+    cursor: pointer;
+}
+.conteudopet{
+    background-color: #FFFFFF;
+    width: 100%;
+    padding:24px;
+    border-radius: 0 0 8px 8px;
+}
+/*GERAL CONTENT*/
+.wb-geral{
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.wb-c{
+    display:flex;
+}
+.wb-e{
+    display:flex;
+    flex-direction: row;
+}
+.wb-d{
+    display:flex;
+    flex-direction: row;
+    margin-left: 38px;
+}
+.wb-g-e{
+    display:flex;
+    flex-direction: column;
+}
+.wb-g-d{
+    display:flex;
+    flex-direction: column;
+    margin-left: 8px;
+}
+
+/*Vacinas Content*/
+
+.vac-ind{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+.vacina-info{
+    display: flex;
+    flex-direction: column;
+    line-height: normal;
+}
+.vacina-info span{
+    line-height: normal;
+}
+.vacina-nome{
+    font-weight: 700;
+    font-size: 24px;
+}
+.vacina-data{
+    font-weight: 400;
+    font-size: 20px;
+    color: #7E7E7E;
+}

@@ -1,0 +1,19 @@
+.loginpage {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 24px 80px;  
+  margin:auto;         
+}
+
+.loginpage p {
+  flex: 1; 
+  font-size: 40px;
+  max-width: 700px; 
+}
+
+.loginpage .wrapper {
+  flex: 1; 
+  display: flex;
+  justify-content: center; 
+}

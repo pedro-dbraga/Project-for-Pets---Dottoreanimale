@@ -16,7 +16,7 @@ async function login(req, res) {
   }
 
   const token = generateToken(user);
-  return res.status(200).json({ message: 'Login realizado com sucesso', token });
+  return res.status(200).json({ message: 'Login realizado com sucesso', token, user: {id: user.id, name: user.name}});
 }
 
 // Middleware de validação de token

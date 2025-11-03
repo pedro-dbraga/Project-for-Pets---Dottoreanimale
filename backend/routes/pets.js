@@ -2,8 +2,10 @@ import express from "express";
 
 const router = express.Router();
 
-import petsController from "../controllers/petscontroller.js";
 import authmiddleware from "../middleware/auth.js";
+
+import petsController from "../controllers/petscontroller.js";
+
 
 router.use(authmiddleware);
 // adicionar pet
@@ -16,6 +18,6 @@ router.get("/:userid/pets", petsController.getPets);
 router.get("/:userid/pets/:id", petsController.getPetById);
 // deletar pet
 router.delete("/:userid/pets/:id", petsController.deletePet);
-
+router.patch("/:userid/pets/:id", petsController.changePetName);
 
 export default router;

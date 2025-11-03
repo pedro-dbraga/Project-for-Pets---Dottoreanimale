@@ -3,12 +3,12 @@ import PetModel from"../models/petsmodel.js";
 async function createPet(req, res) {
 
   const userId = req.params.userid;
-  const { name, spicies, breed, age, weight, color} = req.body;
+  const { name, img, age, weight, breed, sex, spieci, sterelized} = req.body;
 
   if(!name) {
     return res.status(400).json({ message: "Nome do pet é obrigatório" });
   }
-  if(!spicies) {
+  if(!spieci) {
     return res.status(400).json({ message: "Espécie do pet é obrigatória" });
   }
   if(!breed) {
@@ -18,7 +18,7 @@ async function createPet(req, res) {
     return res.status(400).json({ message: "Idade do pet é obrigatória" });
   }
   try {   
-    const newPet = await PetModel.createPet(userId,  name, spicies, breed, age, weight, color);
+    const newPet = await PetModel.createPet(userId,  name, img, age, weight, breed, sex, spieci, sterelized);
     res.status(201).json(newPet);
   } catch (err) { 
     console.error(err);
@@ -29,9 +29,9 @@ async function updatePet(req, res) {
     try {
         const userId = req.params.userid;
         const petId = req.params.id;
-        const { name, spicies, breed, age, weight, color} = req.body;
+        const { age, weight, breed, sex, spieci, sterelized} = req.body;
 
-        const updatedPet = await PetModel.updatePet(userId, petId, name, spicies, breed, age, weight, color);
+        const updatedPet = await PetModel.updatePet(petId,userId, age, weight, breed, sex, spieci, sterelized );
         res.json(updatedPet);
     }
     catch (err) {
@@ -57,7 +57,7 @@ async function getPetById(req, res) {
     const petId = req.params.id;
     const pet = await PetModel.getPetbyId(userId, petId);
     if (!pet) {
-      return res.status(404).json({ message: "Pet não encontrado" });
+      return res.status(404).json({ message: "Pet não encontrado back" });
     }   
     res.json(pet);
     } catch (err) {
@@ -76,4 +76,19 @@ async function deletePet(req, res) {
     res.status(500).json({ message: "Erro ao remover pet" });
   }
 }
-export default { createPet, updatePet, getPets, getPetById, deletePet };
+
+async function changePetName(req, res) {
+  try {
+        const userId = req.params.userid;
+        const petId = req.params.id;
+        const { name} = req.body;
+
+        const updatedPet = await PetModel.changePetName(petId, userId, name );
+        res.json(updatedPet);
+    }
+    catch (err) {
+        console.error(err);
+        res.status(500).json({ message: "Erro ao atualizar pet" });
+    }
+  }
+export default { createPet, updatePet, getPets, getPetById, deletePet, changePetName };

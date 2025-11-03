@@ -15,7 +15,6 @@ async function loginUser(email, password) {
   const user = verifyUser[0];
   const passwordMatch = await bcrypt.compare(password, user.password);
 
-
   if(!passwordMatch){
     throw new Error('Senha incorreta');
   }

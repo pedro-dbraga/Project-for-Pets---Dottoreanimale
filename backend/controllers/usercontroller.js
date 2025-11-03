@@ -43,7 +43,7 @@ async function getUserById(req, res) {
         if (!user) {
             return res.status(404).json({ message: "Usuário não encontrado" });
         }
-        res.json(user);
+        res.json(user[0]);
     } catch (err) { 
         console.error(err);
         res.status(500).json({ message: "Erro ao buscar usuário" });

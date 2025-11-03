@@ -1,0 +1,53 @@
+.title{
+    text-align: center;
+    font-weight: 600;
+}
+
+.boxcadastro {
+  margin:32px auto;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  padding:16px 0px;
+  width: 300px;
+  height: 350px;
+  background: lightgrey;
+  perspective: 1000px;
+  border-radius: 5px;
+  border: 2px solid #323232;
+  box-shadow: 4px 4px #323232;
+}
+
+
+.form{
+    display:flex;
+    flex-direction: column;
+    width: 250px;
+    margin:auto ;
+}
+
+.inputbox{
+    margin-bottom: 8px;
+    border: 1px solid black;
+    border-radius: 8px;
+    box-shadow: none;
+    padding: 4px;
+}
+
+.btn:active, .button-confirm:active {
+  box-shadow: 0px 0px #323232;
+  transform: translate(3px, 3px);
+}
+
+.btn {
+  margin: 16px 0 20px 0;
+  height: 40px;
+  border-radius: 5px;
+  border: 2px solid #323232;
+  background-color: #fff;
+  box-shadow: 4px 4px #323232;
+  font-size: 17px;
+  font-weight: 600;
+  color: #323232;
+  cursor: pointer;
+} 

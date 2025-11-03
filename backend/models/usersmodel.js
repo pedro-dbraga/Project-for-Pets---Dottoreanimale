@@ -63,7 +63,6 @@ async function deleteUser(id) {
     }
     
     await pool.query('DELETE FROM users WHERE id = ?', [id]);
-    await pool.query('DELETE FROM pets WHERE user_id = ?', [id]);
     return { success: true, message: "Usuário removido com sucesso" };
 }
 
