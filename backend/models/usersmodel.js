@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 
 async function createUser(name , email, hashedPassword) {
     const [verifyEmail] = await pool.query('SELECT * FROM users WHERE email = ?', [email]);
-    console.log(verifyEmail);
+    
     
     if (verifyEmail.length > 0) {
         throw new Error("Email já cadastrado");

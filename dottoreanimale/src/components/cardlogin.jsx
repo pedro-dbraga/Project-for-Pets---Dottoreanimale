@@ -46,7 +46,7 @@ export default function LoginCard() {
                <span class="card-side"></span>
                <div class="flip-card__inner">
                   <div class="flip-card__front">
-                     <div class="title">Entrar</div>
+                     <div class="title">Sign IN</div>
                      <form onSubmit={LoginSubmit} class="flip-card__form" action="/post">
                         <input class="flip-card__input" name="email" placeholder="Email" type="email"value={email} onChange={(e) => setEmail(e.target.value)} />
                         <input class="flip-card__input" name="password" placeholder="Password" type="password" value={password} onChange={(e) => setSenha(e.target.value)}/>
@@ -54,12 +54,12 @@ export default function LoginCard() {
                            <input type="checkbox" value="Tutor"/> <span>Tutor</span>
                            <input type="checkbox" value="Veterinario"/> <span>Veterinario</span>
                         </div> */}
-                        <button class="flip-card__btn" type="submit">Entrar</button>
+                        <button class="flip-card__btn" type="submit">Submit</button>
                         {erro && <p style={{ color: "red" }}>{erro}</p>}
                      </form>
                   </div>
                   <div class="flip-card__back">
-                     <div class="title">Cadastrar</div>
+                     <div class="title">Sign Up</div>
                      <form class="flip-card__form" action="/post" onSubmit={handleRegister}>
                         <input class="flip-card__input" placeholder="Name" type="name" value={name} onChange={(e) => setName(e.target.value)}/>
                         <input class="flip-card__input" name="email" placeholder="Email" type="email" value={email} onChange={(e) => setEmail(e.target.value)}/>
@@ -68,7 +68,7 @@ export default function LoginCard() {
                            <input type="checkbox" value="Tutor"/> <span>Tutor</span>
                            <input type="checkbox" value="Veterinario"/> <span>Veterinario</span>
                         </div>*/}
-                        <button class="flip-card__btn">Cadastrar</button>
+                        <button class="flip-card__btn">Submit</button>
                      </form>
                   </div>
                </div>

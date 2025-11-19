@@ -22,7 +22,7 @@
 
 .card-side::before {
   position: absolute;
-  content: 'Entrar';
+  content: 'Sign in';
   left: -70px;
   top: 0;
   width: 100px;
@@ -33,7 +33,7 @@
 
 .card-side::after {
   position: absolute;
-  content: 'Cadastrar';
+  content: 'Sign Up';
   left: 70px;
   top: 0;
   width: 100px;

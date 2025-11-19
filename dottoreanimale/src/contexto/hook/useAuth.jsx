@@ -41,6 +41,10 @@ export default function useAuth() {
       setAuthenticated(true);
       setUser(user);
       console.log(user.id);
+      if(user.is_admin === 1){
+        navigate(`/admin/${user.id}`);
+        return;
+      }
       navigate(`/user/${user.id}`);
     } catch (err) {
       console.error("Erro no login:", err);

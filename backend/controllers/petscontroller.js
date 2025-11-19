@@ -3,12 +3,12 @@ import PetModel from"../models/petsmodel.js";
 async function createPet(req, res) {
 
   const userId = req.params.userid;
-  const { name, img, age, weight, breed, sex, spieci, sterelized} = req.body;
+  const { name, img, age, weight, breed, sex, species, sterelized} = req.body;
 
   if(!name) {
     return res.status(400).json({ message: "Nome do pet é obrigatório" });
   }
-  if(!spieci) {
+  if(!species) {
     return res.status(400).json({ message: "Espécie do pet é obrigatória" });
   }
   if(!breed) {
@@ -18,7 +18,7 @@ async function createPet(req, res) {
     return res.status(400).json({ message: "Idade do pet é obrigatória" });
   }
   try {   
-    const newPet = await PetModel.createPet(userId,  name, img, age, weight, breed, sex, spieci, sterelized);
+    const newPet = await PetModel.createPet(userId,  name, img, age, weight, breed, sex, species, sterelized);
     res.status(201).json(newPet);
   } catch (err) { 
     console.error(err);
@@ -29,9 +29,9 @@ async function updatePet(req, res) {
     try {
         const userId = req.params.userid;
         const petId = req.params.id;
-        const { age, weight, breed, sex, spieci, sterelized} = req.body;
+        const { age, weight, breed, sex, species, sterelized} = req.body;
 
-        const updatedPet = await PetModel.updatePet(petId,userId, age, weight, breed, sex, spieci, sterelized );
+        const updatedPet = await PetModel.updatePet(petId,userId, age, weight, breed, sex, species, sterelized );
         res.json(updatedPet);
     }
     catch (err) {

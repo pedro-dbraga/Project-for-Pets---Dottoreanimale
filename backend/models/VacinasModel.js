@@ -8,7 +8,7 @@ async function createVacina(pet_id, name, date) {
 }
 
 async function getVacinasByPetId(pet_id) {
-    const vacinas = await pool.query('SELECT name, date FROM vacinas WHERE pet_id = ?', [pet_id]);
+    const vacinas = await pool.query('SELECT id, name, date FROM vacinas WHERE pet_id = ?', [pet_id]);
     
     if (vacinas.length === 0) {
         throw new Error("Vacina não encontrada");
@@ -18,7 +18,7 @@ async function getVacinasByPetId(pet_id) {
 }
 
 async function getVacina(id, pet_id) {
-    const vacina = await pool.query('SELECT name, data FROM vacinas WHERE id = ? AND pet_id = ?', [id, pet_id]);
+    const vacina = await pool.query('SELECT name, date FROM vacinas WHERE id = ? AND pet_id = ?', [id, pet_id]);
     
     if (vacina[0].length === 0) {
         throw new Error("Vacina não encontrada");
@@ -26,13 +26,14 @@ async function getVacina(id, pet_id) {
     return vacina[0];
 }
 
-async function updateVacina(id, pet_id, name, data) {
+async function updateVacina(id, pet_id, name, date) {
     const vacina = await pool.query('SELECT name FROM vacinas WHERE id = ? AND pet_id = ?', [id, pet_id]);
     if (vacina[0].length === 0) {
         throw new Error("Vacina não encontrada");
     }
-    await pool.query('UPDATE vacinas SET name = ?, data = ? WHERE id = ? AND pet_id = ?', [name, data, id, pet_id]);
-    return {message: 'Vacina atualizada com sucesso'};
+    await pool.query('UPDATE vacinas SET name = ?, date = ? WHERE id = ? AND pet_id = ?', [name, date, id, pet_id]);
+    const newvacina = {id, pet_id, name, date}
+    return newvacina;
 }
 
 async function deleteVacina(id, pet_id) {

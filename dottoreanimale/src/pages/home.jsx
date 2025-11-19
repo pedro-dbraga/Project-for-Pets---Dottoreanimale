@@ -1,10 +1,10 @@
 import Header from "../layouts/header";
-
+import "../styles/home.css";
 export default function Home() {
   return (
     <div>
     <Header />
-        <img src="" alt="banner"/>
+
     {/*<section>
       <div>
         <h1>Jornal</h1>
@@ -30,8 +30,9 @@ export default function Home() {
         </div>
       </div>
     </section>*/}
-    <section>
-
+    <section className="aboutbox">
+      <h1 className="abouttitle">ABOUT US</h1>
+      <p className="abouttext"> THIS SCIENTIFIC INITIATION PROJECT FOCUSES ON THE DEVELOPMENT OF AN APPLICATION AIMED AR SUPPORTING PET OWNERS IN THE MANAGEMENT OF THEIR PET'S HEALTH</p>
     </section>
 </div> 
   );

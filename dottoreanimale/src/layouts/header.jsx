@@ -24,12 +24,12 @@ export default function Header() {
       <div>
         {authenticated && user ? (
           <div className="header-right">
-            <Link to={`/user/${user.id}`}><p>Olá, {user.name}</p></Link>
-            <Link  to="/login" onClick={handleLogout}><p>Sair</p></Link>
+            <Link to={`/user/${user.id}`}><p>Hello, {user.name}</p></Link>
+            <Link  to="/login" onClick={handleLogout}><p>Logout</p></Link>
           </div>
           
         ) : (
-          <Link to="/login"><p>Entrar</p></Link>
+          <Link to="/login"><p>Sign in</p></Link>
         )}
           
       </div>

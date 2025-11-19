@@ -7,7 +7,7 @@ export default function Login() {
     <div>
       <Header />
       <div className="loginpage">
-        <p>Na correria do dia a dia não conseguimos lembrar de todos os detalhes. Deixe a  Dottore Animale lembrar para você.</p>
+        <p>Life gets busy. it’s hard to remember every little detail. Let Dottore Animale take care of it for you.</p>
         <LoginCard/>
       </div>
     </div>

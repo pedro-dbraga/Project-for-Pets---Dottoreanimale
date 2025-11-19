@@ -17,6 +17,7 @@ export default function PetsGeral(){
     const [pet, setPet] = useState({});
     const token = localStorage.getItem("token");
 
+
     const [isEditing, setIsEditing] = useState(false);
     const [name, setName] = useState(pet.name || "");
 
@@ -35,6 +36,10 @@ export default function PetsGeral(){
                 return <Geral/>;
         }
     }
+    function formatShortName(fullName) {
+        const parts = fullName.trim().split(/\s+/);
+         return parts.length > 1 ? `${parts[0]} ${parts[1][0].toUpperCase()}.` : parts[0];
+}
     useEffect(() => {
         const token = localStorage.getItem("token");
         async function fetchPets() {
@@ -55,7 +60,11 @@ export default function PetsGeral(){
         }
 
         const data = await response.json();
-        setPets(data);
+        const formattedPets = data.map(pet => ({
+      ...pet,
+      shortName: formatShortName(pet.name),
+    }));
+    setPets(formattedPets);
         } catch (err) {
         console.error("Erro ao buscar pets:", err);
         setError(err.message);
@@ -92,7 +101,7 @@ export default function PetsGeral(){
 
     fetchPets();
     petinfo();}, [userid, petid]);
-             async function handleUpdate() {
+        async function handleUpdate() {
             try {
                 const response = await fetch(`http://localhost:3001/users/${userid}/pets/${petid}`, {
                     method: "PATCH",
@@ -132,7 +141,7 @@ export default function PetsGeral(){
                     <div className="cp-g-e">
                         {pets.length > 0 ? ( 
                             pets.map((pet, index) => (
-                            <a key={pet.id} href={`${pet.id}`}><p>{index > 0 && " | "}{pet.name}</p></a>
+                            <a key={pet.id} href={`${pet.id}`}><p>{index > 0 && " | "}{pet.shortName}</p></a>
                         ))
                     ) : (
                         <p>Nenhum pet encontrado.</p>

@@ -8,7 +8,7 @@ import bcrypt from'bcryptjs';
 
 async function loginUser(email, password) {
   const [verifyUser] = await pool.query('SELECT * FROM users WHERE email = ?', [email]);
-  console.log("resultado da query:", verifyUser);
+  
   if (verifyUser.length === 0) {
     throw new Error("Usuário não encontrado");
   }
