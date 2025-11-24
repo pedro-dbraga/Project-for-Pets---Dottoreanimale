@@ -28,4 +28,4 @@ async function MetricPetByBreed() {
     const [rows] = await pool.query(`SELECT species, breed, COUNT(breed)  FROM pets GROUP BY breed Order BY breed desc;`)
     return rows;
 }
-export default { CreateAdmin, MetricPetBySpecies, MetricSterelized };
+export default { CreateAdmin, MetricPetBySpecies, MetricSterelized, MetricPetByBreed };

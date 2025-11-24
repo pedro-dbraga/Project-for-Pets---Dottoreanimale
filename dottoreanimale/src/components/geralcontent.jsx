@@ -82,9 +82,9 @@ export default function Geral(){
             <div className="wb-c">
                 <div className="wb-e">
                 <div className="wb-g-e">
-                    <span>Idade:</span>
-                    <span>Peso:</span>
-                    <span>Raça:</span>
+                    <span>Age:</span>
+                    <span>Weight:</span>
+                    <span>Breed:</span>
                 </div>
                 <div className="wb-g-d">
                     <span>{pet.age}</span>
@@ -94,13 +94,13 @@ export default function Geral(){
             </div>
             <div className="wb-d">
                 <div className="wb-g-e">
-                    <span>Sexo:</span>
-                    <span>Especie:</span>
-                    <span>Castrado:</span>
+                    <span>Sex:</span>
+                    <span>Specie:</span>
+                    <span>Sterelized:</span>
                 </div>
                 <div className="wb-g-d">
                     <span>{pet.sex}</span>
-                    <span>{pet.spieci}</span>
+                    <span>{pet.species}</span>
                     <span>{pet.sterelized}</span>
                 </div>
             </div>

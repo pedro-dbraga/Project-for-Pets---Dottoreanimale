@@ -55,6 +55,12 @@ async function MetricSterelized(req, res){
 }
 
 /*number of pets per species and breed*/
-
-
+async function MetricPetByBreed(req, res){
+    try {
+        const metrics = await AdmModel.MetricPetByBreed();
+        res.status(200).json(metrics);
+    }catch(err){
+        res.status(500).json({ error: 'Failed to retrieve metrics' });
+    }
+}
 export default { CreateAdmin, MetricPetBySpecies, MetricSterelized };

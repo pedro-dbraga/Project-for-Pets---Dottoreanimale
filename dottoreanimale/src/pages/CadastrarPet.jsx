@@ -11,7 +11,7 @@ export default function CadastroPet() {
     const [age, setAge] = useState("");
     const [weight, setWeight] = useState("");
     const [breed, setBreed] = useState("");
-    const [spieci, setSpieci] = useState("");
+    const [species, setSpecies] = useState("");
     const [sex, setSex] = useState("");
     const [sterelized, setSterelized] = useState("");
 
@@ -23,7 +23,7 @@ export default function CadastroPet() {
                 headers: { "Content-Type": "application/json",
                     "Authorization": `Bearer ${token}`
                  },
-                body: JSON.stringify({ name,img, age, weight, breed, spieci, sex, sterelized })
+                body: JSON.stringify({ name,img, age, weight, breed, species, sex, sterelized })
             });
 
             const data = await response.json();
@@ -37,16 +37,16 @@ export default function CadastroPet() {
     <div>
         <Header/>
         <div class="boxcadastro">
-            <h2 class="title">Cadastrar Novo Pet</h2>
+            <h2 class="title">New Pet</h2>
             <form class="form" method="post" onSubmit={handlePetSignup}> 
-                <input class="inputbox" type="text" name="name" value={name} onChange={(e) => setName(e.target.value)} placeholder="Nome" required /> 
-                <input class="inputbox" type="number" name="age" value={age} onChange={(e) => setAge(e.target.value)} placeholder="Idade" required />
-                <input class="inputbox" type="text" name="weight" value={weight} onChange={(e) => setWeight(e.target.value)} placeholder="Peso" />
-                <input class="inputbox" type="text" name="breed" value={breed} onChange={(e) => setBreed(e.target.value)} placeholder="Raça" />
-                <input class="inputbox" type="text" name="spieci" value={spieci} onChange={(e) => setSpieci(e.target.value)} placeholder="Especie" required />
-                <input class="inputbox" type="text" name="sex" value={sex} onChange={(e) => setSex(e.target.value)} placeholder="Genero" required />
-                <input class="inputbox" type="text" name="sterelized" value={sterelized} onChange={(e) => setSterelized(e.target.value)} placeholder="Castrado?" required />
-                <button class="btn" type="submit">Cadastrar Pet</button>
+                <input class="inputbox" type="text" name="name" value={name} onChange={(e) => setName(e.target.value)} placeholder="Name" required /> 
+                <input class="inputbox" type="number" name="age" value={age} onChange={(e) => setAge(e.target.value)} placeholder="Age" required />
+                <input class="inputbox" type="text" name="weight" value={weight} onChange={(e) => setWeight(e.target.value)} placeholder="Weight" />
+                <input class="inputbox" type="text" name="breed" value={breed} onChange={(e) => setBreed(e.target.value)} placeholder="Breed" />
+                <input class="inputbox" type="text" name="spieci" value={species} onChange={(e) => setSpecies(e.target.value)} placeholder="Species" required />
+                <input class="inputbox" type="text" name="sex" value={sex} onChange={(e) => setSex(e.target.value)} placeholder="Sex" required />
+                <input class="inputbox" type="text" name="sterelized" value={sterelized} onChange={(e) => setSterelized(e.target.value)} placeholder="Sterelized?" required />
+                <button class="btn" type="submit">Submit Pet</button>
             </form>
         </div>
     </div>    
