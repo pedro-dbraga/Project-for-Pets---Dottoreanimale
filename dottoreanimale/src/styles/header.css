@@ -1,11 +1,52 @@
+.onlydesktop{
+  display: none;
+}
 .header{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 80px;
+  padding: 10px 16px;
   color: black;
   max-width: 1024px;
   margin: 0 auto;
+}
+.logo {
+  height: 50px;
+  width: 50px;
+}
+.header-right{
+  display: flex;
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .onlydesktop{
+    display: block;
+  }
+  .header{
+    padding: 10px 24px;
+  }
+  .header-left{
+  display: flex;
+  align-items: center;
+}
+  .logo{
+    height: 75px;
+    width: 75px;
+  }
+  .header-left p{
+  font-size: 20px;
+  color: #000000;
+  margin-left: 10px;
+  font-family: "Major Mono Display", monospace;
+}
+}
+@media (min-width: 1024px) {
+  .onlydesktop{
+    display: block;
+  }
+.header{
+  padding: 10px 80px;
 }
 
 .header-left{
@@ -32,4 +73,5 @@
 .header-right{
   display: flex;
   gap: 20px;
+}
 }

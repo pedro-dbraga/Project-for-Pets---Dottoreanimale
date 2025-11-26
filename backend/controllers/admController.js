@@ -63,4 +63,4 @@ async function MetricPetByBreed(req, res){
         res.status(500).json({ error: 'Failed to retrieve metrics' });
     }
 }
-export default { CreateAdmin, MetricPetBySpecies, MetricSterelized };
+export default { CreateAdmin, MetricPetBySpecies, MetricSterelized, MetricPetByBreed};

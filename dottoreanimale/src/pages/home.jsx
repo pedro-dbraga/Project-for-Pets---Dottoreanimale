@@ -32,7 +32,7 @@ export default function Home() {
     </section>*/}
     <section className="aboutbox">
       <h1 className="abouttitle">ABOUT US</h1>
-      <p className="abouttext"> THIS SCIENTIFIC INITIATION PROJECT FOCUSES ON THE DEVELOPMENT OF AN APPLICATION AIMED AR SUPPORTING PET OWNERS IN THE MANAGEMENT OF THEIR PET'S HEALTH</p>
+      <p className="abouttext"> THIS SCIENTIFIC INITIATION PROJECT FOCUSES ON THE DEVELOPMENT OF AN APPLICATION AIMED AT SUPPORTING PET OWNERS IN THE MANAGEMENT OF THEIR PET'S HEALTH</p>
     </section>
 </div> 
   );

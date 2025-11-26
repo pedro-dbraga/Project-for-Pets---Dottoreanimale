@@ -80,7 +80,7 @@ export default function Geral(){
     return(
         <div className="wb-geral">
             <div className="wb-c">
-                <div className="wb-e">
+            <div className="wb-e">
                 <div className="wb-g-e">
                     <span>Age:</span>
                     <span>Weight:</span>
@@ -105,7 +105,7 @@ export default function Geral(){
                 </div>
             </div>
             </div>
-            <div>
+            <div className="iconsupdel">
                 <a href={`/user/${userid}/pets/${petid}/update`}><img src={editimg} alt="edit"/></a>
                 <a onClick={handleDelete}><img src={deleteimg} alt="delete"/></a>
             </div>

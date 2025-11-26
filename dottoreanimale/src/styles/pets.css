@@ -1,3 +1,148 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/*MENU PET*/
+.navegation {
+    display:flex;
+    justify-content: space-evenly;
+    font-size: 24px;
+}
+.navegation a:hover{
+    text-decoration: underline;
+    color: rgb(55, 95, 28);
+}
+
+.pets {
+    display: flex;
+    justify-content: center;
+    margin: 32px auto;
+    padding: 0 16px;
+    flex-wrap: wrap;
+    gap:32px;
+}
+
+.perfilpet {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/*PETS GERAL*/
+.box {
+    margin: 0px 0px;
+    max-width: 1024px;
+}
+.quadropet{
+    padding: 16px 16px;
+    background-color: #7EB060;
+    border-radius: 0px;
+}
+.cabeçalhopet{
+    margin-top: -20px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.cp-g-e{
+    display:flex;
+    height: 60px;
+    gap: 8px;
+}
+.cp-indv{
+    display:flex;
+    align-items: center;
+}
+.imgperfil{
+    width: 50px;
+    height: 50px;
+}
+.cp-indv p{
+    margin-left: 16px;
+    margin-right: 8px;
+    font-size: 24px;
+}
+.cabeçalhopet2{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.menugeral ul{
+    display: flex;
+    gap:8px;
+    flex-wrap: wrap;
+}
+.menugeral ul, li{
+    list-style: none;
+}
+/*GERAL CONTENT*/
+.wb-e{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.wb-d{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.wb-g-e{
+    display:flex;
+    flex-direction: column;
+}
+.wb-g-d{
+    display:flex;
+    flex-direction: column;
+    
+}
+.wb-c span{
+    width:80px;
+}
+.iconsupdel{
+    display:flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 16px;
+}
+/*Vacinas Content*/
+.vacinas-list ul{
+    padding: 0;
+    margin: 0 16px;
+    display: flex;
+    flex-direction: column;
+}
+.vac-ind{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+.vacina-info{
+    display: flex;
+    flex-direction: column;
+    line-height: normal;
+}
+.vacina-info span{
+    line-height: normal;
+}
+.vacina-nome{
+    font-weight: 600;
+    font-size: 24px;
+}
+.vacina-data{
+    font-weight: 400;
+    font-size: 20px;
+    color: #ffffff;
+    margin-left: 8px;
+}
+
+@media(min-width: 1024px){
+
 .navegation {
     display:flex;
     justify-content: center;
@@ -26,6 +171,12 @@
 }
 .cabeçalhopet{
     display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.cabeçalhopet2{
+    display:flex;
     justify-content: space-between;
     align-items: center;
 }
@@ -38,10 +189,7 @@
     background-color: #7EB060;
     border-radius: 8px;
 }
-.cp-indv{
-    display:flex;
-    align-items: center;
-}
+
 .cp-indv p{
     margin-left: 32px;
     font-size: 40px;
@@ -52,9 +200,7 @@
     justify-content: start;
     width: 100%;
 }
-.menugeral ul, li{
-    list-style: none;
-}
+
 .menugeral ul li{
     width: 100%;
     padding: 0 0 0 8px;
@@ -138,4 +284,7 @@
     font-weight: 400;
     font-size: 20px;
     color: #7E7E7E;
+}
+
+
 }

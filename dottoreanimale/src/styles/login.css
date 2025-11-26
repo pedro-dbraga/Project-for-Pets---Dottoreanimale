@@ -1,20 +1,36 @@
 .loginpage {
   display: flex;
+  flex-direction: column;
   justify-content: space-between; 
   align-items: center; 
+  padding: 0px 0px;  
+  margin: 0px auto;    
+  max-width: 1024px;     
+}
+
+.loginpage p {
+  font-size: 24px;
+  text-align: center;
+  margin:0px 16px 40px 16px;
+}
+
+@media (min-width: 1024px) {
+  .loginpage {
+  flex-direction: row;
   padding: 24px 0px;  
   margin: 32px auto;    
   max-width: 1024px;     
 }
 
-.loginpage p {
+  .loginpage p {
   flex: 1;
   font-size: 40px;
   max-width: 700px; 
 }
 
-.loginpage .wrapper {
+  .loginpage .wrapper {
    flex: 1;
   display: flex;
   justify-content: center; 
+}
 }

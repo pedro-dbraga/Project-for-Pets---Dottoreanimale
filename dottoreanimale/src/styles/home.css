@@ -1,6 +1,24 @@
 .aboutbox{
-    margin: 64px auto;
+    margin: 16px auto;
     max-width: 1024px;
+    padding:0px 16px
+}
+
+.abouttitle{
+    margin:0px;
+    padding: 0;
+    font-size: 24px;
+}
+
+.abouttext{
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+@media (min-width: 1024px) {
+.aboutbox{
+    margin: 64px auto;
 }
 
 .abouttitle{
@@ -11,4 +29,5 @@
 .abouttext{
     margin: 0;
     padding: 0;
+}
 }

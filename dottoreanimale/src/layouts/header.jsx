@@ -14,7 +14,7 @@ export default function Header() {
         <a href="/" target="_self">
         <img src={logo} className="logo" alt="Dottore logo" />
       </a>
-      <a href="/" target="_self">
+      <a href="/" target="_self" className="onlydesktop">
         <p>Dottore Animale</p>
       </a>
       </div>
@@ -24,14 +24,22 @@ export default function Header() {
       <div>
         {authenticated && user ? (
           <div className="header-right">
-            <Link to={`/user/${user.id}`}><p>Hello, {user.name}</p></Link>
-            <Link  to="/login" onClick={handleLogout}><p>Logout</p></Link>
+            {user.is_admin === 1 ? (
+              <>
+                <Link to={`/admin/${user.id}`}><p>Hello, {user.name}</p></Link>
+                <Link to="/login" onClick={handleLogout}><p>Logout</p></Link>
+              </>
+            ) : (
+              <>
+                <Link to={`/user/${user.id}`}><p>Hello, {user.name}</p></Link>
+                <Link to="/login" onClick={handleLogout}><p>Logout</p></Link>
+              </>
+            )}
+
           </div>
-          
         ) : (
           <Link to="/login"><p>Sign in</p></Link>
         )}
-          
       </div>
     </header>
   )

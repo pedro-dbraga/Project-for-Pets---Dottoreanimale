@@ -8,13 +8,17 @@ async function createVacina(pet_id, name, date) {
 }
 
 async function getVacinasByPetId(pet_id) {
-    const vacinas = await pool.query('SELECT id, name, date FROM vacinas WHERE pet_id = ?', [pet_id]);
+    const [vacinas] = await pool.query('SELECT id, name, date FROM vacinas WHERE pet_id = ?', [pet_id]);
     
     if (vacinas.length === 0) {
         throw new Error("Vacina não encontrada");
     }
-
-    return vacinas[0];
+    const rows = vacinas.map(vacina => ({
+        id: vacina.id,
+        name: vacina.name,
+        date: vacina.date.toISOString().split("T")[0]
+}));
+    return rows;
 }
 
 async function getVacina(id, pet_id) {

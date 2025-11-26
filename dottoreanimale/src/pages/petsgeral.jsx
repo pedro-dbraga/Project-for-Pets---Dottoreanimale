@@ -150,7 +150,7 @@ export default function PetsGeral(){
                     <a href={`/user/${userid}/cadastrarpet`}>+ Adicionar Novo Pet</a>
                 </div>
                 <div className="quadropet">
-                    <div className="cabeçalhopet">
+                    <div className="cabeçalhopet2">
                         <div className="cp-indv">
                             <img className="imgperfil" src={petimg} alt="petimg" />
                             {isEditing ? (

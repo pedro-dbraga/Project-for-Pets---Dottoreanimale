@@ -117,7 +117,7 @@ export default function Vacinas() {
     );
 
   return (
-    <div>
+    <div className="vacinas-list">
       <ul>
         {vacinas.map((vacina) => (
           <li className="vac-ind" key={vacina.id}>
