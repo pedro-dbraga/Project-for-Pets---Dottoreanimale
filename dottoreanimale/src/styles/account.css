@@ -1,0 +1,46 @@
+.accountbox {
+    max-width: 1024px;
+    margin: 32px auto;
+    background-color: #E0E0E0;
+    border-radius: 10px;
+}
+
+.colordiv{
+    background: linear-gradient(30deg, #027333, #E0E0E0, #A6243C);
+    height: 50px;
+    border-radius:10px 10px 0px 0px;
+}
+
+.accountheader{
+    margin: 32px 0 24px 0;
+}
+.accountheader p{
+    margin:-15px;
+    padding:0px;
+    text-transform: none;
+    text-decoration: none;
+}
+.topcontent{
+    display:flex;
+    margin: 0px 24px;
+    padding: 0px;
+    justify-content: space-between;
+}
+
+.topcontent div{
+    width:50%;
+}
+.topcontent p{
+    margin:-10px;
+}
+
+.passcontent{
+    margin: 24px 24px;
+}
+
+.passcontent p{
+    margin: -10px;
+}
+ .passcontent span{
+    margin:0px;
+ }
