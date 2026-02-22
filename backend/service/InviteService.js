@@ -20,6 +20,13 @@ async function createInvite(userId, familyId, email, role){
     return (invite.id, invite.createToken);
 }
 
+async function listInvites(userId){
+    
+    const result = await InviteModel.listInvites(userId);
+
+    return result;
+}
+
 async function acceptInvite(id, userId, status, token){
 
     const connection = await pool.getConnection();
@@ -55,4 +62,4 @@ async function DeleteInvite(id, userId, familyId){
 }
 
 
-export default {createInvite, acceptInvite, DeleteInvite};
+export default {createInvite, listInvites, acceptInvite, DeleteInvite};

@@ -3,7 +3,7 @@ import authModel from "../models/authModel.js"
 
 async function createVaccineService(userId, petId, name, appliedAt, doseNumber, nextDoseAt){
 
-    
+    /*criar regra para vacina, dependando da vacina que for cadastrada criara uma data de aplicação da proxima dose */
     const canCreate = await authModel.checkIfUserIsAbleToCreateVaccine(userId, petId);
     
     if (!canCreate) {

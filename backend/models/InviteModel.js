@@ -13,6 +13,21 @@ async function InviteMember(invite) {
     return result;
 }
 
+async function listInvites(userId){
+
+    const [rows] = await pool.query(`
+        SELECT i.id, f.name
+        FROM invites i
+        JOIN family f
+        ON i.familyId = f.id
+        JOIN users u
+        ON i.email_convidado = u. email
+        WHERE u.id = ?
+        AND i.status = 'PENDING'
+        AND i.expires_at > NOW()
+        `, 
+        [userId])
+}
 async function acceptInvite(id, status,token, connection) {
 
     const [result] = await connection.query(`UPDATE invites i 
@@ -44,4 +59,4 @@ async function DeleteInvite(id, userId, familyId){
     return result;
 }
 
-export default {InviteMember, acceptInvite, getFamilyFromAInvite, DeleteInvite};
+export default {InviteMember, listInvites, acceptInvite, getFamilyFromAInvite, DeleteInvite};

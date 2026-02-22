@@ -14,6 +14,19 @@ async function InviteMember(req, res) {
     }
 }
 
+async function listInvites(req, res) {
+
+    const userId = req.user.id;
+
+    try{
+
+        const invite = await InviteService.listInvites(userId);
+
+        res.status(200).json(invite);
+    } catch(err){
+        res.status(500).json(`Erro ao cadastrar: ${err}`)
+    }
+}
 async function acceptInvite(req, res) {
     const userId = req.user.id;
     const id = req.params.id
@@ -40,4 +53,4 @@ async function deleteInvite(){
     }
 }
 
-export default {InviteMember, acceptInvite, deleteInvite};
+export default {InviteMember, listInvites, acceptInvite, deleteInvite};

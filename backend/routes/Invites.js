@@ -11,7 +11,7 @@ router.use(authmiddleware);
 
 router.post("/families/:familyId/createinvite", InviteController.InviteMember);
 
-/*router.get("/showInvites",InviteController.getAllInvites);*/
+router.get("/showInvites",InviteController.listInvites);
 
 router.put("/:id/inviteRes", InviteController.acceptInvite);
 

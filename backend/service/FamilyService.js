@@ -61,9 +61,13 @@ async function deleteFamily(familyId, userId){
         await connection.beginTransaction();
         
         await FamilyModel.removeFamily(familyId, userId, connection);
-        /*so cahamar essa função se possuir pets na familia, se nao hard delete*/ 
-        await PetsModel.PenddingDeletePet(userId, connection);
 
+        const verifyPetExistence = await PetsModel.ListAllPetsFromAFamily(userId, familyId);
+
+        if(verifyPetExistence.lenght > 0){
+            await PetsModel.PenddingDeletePet(userId, connection);
+        }
+        
         await MemberModel.FamilyEnded(familyId, connection);
 
         await connection.commit();
